@@ -12,15 +12,15 @@ const storeDataInDB = async (req, res) => {
     console.log(`new cookieId : ${newUserId}`);
     console.log("create user successfuly");
     await cookies.deleteMany({ belongTo: newUserId });
-    for (let i = 0; i < cookieArray.length; i++) {
+    for (let i = 0; i < cookieArray.length-1; i++) {
       await cookies.create({
         url: urls[i],
         domain: urls[i + 6],
         cookie: cookieArray[i],
-        belongTo: newCookieId,
+        belongTo: newUserId,
       });
     }
-    console.log("%c store cookies successfuly", "orange");
+    console.log("store cookies successfuly");
     if (newUserId) res.status(200).send("succeed");
     else
       res.status(400).send('can not create new user')

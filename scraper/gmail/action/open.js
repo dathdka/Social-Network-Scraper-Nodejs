@@ -1,4 +1,4 @@
-const startBrowser = require('../browser')
+const startBrowser = require('../../browser')
 
 const openPage = async (cookie) =>{
     try {

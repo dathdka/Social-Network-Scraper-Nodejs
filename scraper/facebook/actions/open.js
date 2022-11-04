@@ -1,4 +1,4 @@
-const browserInstance = require('../browser')
+const browserInstance = require('../../browser')
 
 const scrapObj = async (cookie) =>{
     try {
